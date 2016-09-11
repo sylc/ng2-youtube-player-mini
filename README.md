@@ -1,6 +1,5 @@
 # ng2-youtube-player-mini
-
-***ng2-youtube-player-mini*** is an Angular2 component to integrate a youtube player quickly
+ng2-youtube-player-mini is an Angular2 Module to integrate quickly the most basic youtube player as a component.
 
 
 ## Demo
@@ -29,9 +28,9 @@ map: {
 
 In app.module
 ```typescript
-import { YoutubePlayer }  from 'ng2-youtube-player-mini/youtube-player.component'
+import { YoutubePlayerMiniModule }  from 'ng2-youtube-player-mini/ng2-youtube-player-mini'
 ...
-declarations:[YoutubePlayer]
+imports:[YoutubePlayerMiniModule]
 ```
 
 in Component
@@ -40,7 +39,7 @@ import {Component} from '@angular/core';
 
 @Component({
   template: `
-    <youtube-player [playerId]='"player"' [width]="640" [height]="480" [videoId]='"vntAEVjPBzQ"'> </youtube-player>
+    <youtube-player [playerId]='"player"' [width]="640" [height]="480" [videoId]='"vntAEVjPBzQ"' [style]='"border: solid 1px #83207d;"'> </youtube-player>
   `,
 })
 

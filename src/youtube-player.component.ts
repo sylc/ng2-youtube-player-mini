@@ -9,7 +9,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
          [height]="height"
          [src]="src"
          frameborder="0"
-         style="border: solid 1px #83207d"
+         [style]="styleSafe"
          allowfullscreen
          >
       </iframe>
@@ -19,11 +19,13 @@ export class YoutubePlayer implements OnInit {
 
    public player: any;
    private src: SafeResourceUrl;
+   private styleSafe : SafeUrl;
 
    @Input() width: number;
    @Input() height: number;
    @Input() videoId: string;
    @Input() playerId: string;
+   @Input() style: string;
 
 
    constructor(private sanitizer: DomSanitizer) {
@@ -31,6 +33,7 @@ export class YoutubePlayer implements OnInit {
       this.height = 390;
       this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
       this.playerId = "player";
+      this.style =""
 
    }
 
@@ -44,7 +47,8 @@ export class YoutubePlayer implements OnInit {
       //"https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
       //Sanitize the entry
       this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.videoId + "?enablejsapi=1" )
-   }
+      this.styleSafe = this.sanitizer.bypassSecurityTrustStyle(this.style)
+}
 
 
 

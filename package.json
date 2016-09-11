@@ -1,10 +1,10 @@
 {
   "name": "ng2-youtube-player-mini",
-  "version": "1.0.0",
-  "description": "***ng2-youtube-player-mini*** is an Angular2 component to integrate a youtube player quickly",
+  "version": "2.0.0",
+  "description": "ng2-youtube-player-mini is an Angular2 Module to integrate quickly the most basic youtube player as a component",
   "repository": {
     "type": "git",
-    "url": "ng2-youtube-player-mini is an Angular2 component to integrate a youtube player quickly"
+    "url": "https://github.com/sylc/ng2-youtube-player-mini.git"
   },
   "scripts": {
     "tsc": "tsc",
@@ -19,7 +19,7 @@
     "@angular"
   ],
   "author": "Sylvain Cau",
-  "main": "youtube-player.component.ts",
+  "main": "ng2-youtube-player-mini.ts",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^1.8.10",
