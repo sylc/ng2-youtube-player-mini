@@ -1,9 +1,5 @@
 # ng2-youtube-player-mini
-ng2-youtube-player-mini is an Angular2 Module to integrate quickly the most basic youtube player as a component.
-
-
-## Demo
-
+lightweight wrapper for youtube player
 
 
 ## Installation:
@@ -47,6 +43,11 @@ class App {
 
 }
 ```
+## Notes
+You can also pass an http type link to videoId. 
+
+## Security Notes
+videoId and Styles are considered Safe. Ensure these values are not provided by unknown source. 
 
 ## Author
 
