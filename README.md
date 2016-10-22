@@ -35,7 +35,7 @@ import {Component} from '@angular/core';
 
 @Component({
   template: `
-    <youtube-player [playerId]='"player"' [width]="640" [height]="480" [videoId]='"vntAEVjPBzQ"' [style]='"border: solid 1px #83207d;"'> </youtube-player>
+    <youtube-player [playerId]='"player"' [width]="640" [height]="480" [videoId]='"vntAEVjPBzQ"'> </youtube-player>
   `,
 })
 
@@ -47,7 +47,7 @@ class App {
 You can also pass an http type link to videoId. 
 
 ## Security Notes
-videoId and Styles are considered Safe. Ensure these values are not provided by unknown source. 
+videoId is considered Safe. Ensure these values are not provided by unknown source. 
 
 ## Author
 

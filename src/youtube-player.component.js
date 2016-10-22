@@ -11,13 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var YoutubePlayer = (function () {
+    //@Input() style: string;
     function YoutubePlayer(sanitizer) {
         this.sanitizer = sanitizer;
         this.width = 640;
         this.height = 390;
         this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
         this.playerId = "player";
-        this.style = "";
+        //this.style = ""
     }
     YoutubePlayer.prototype.ngOnInit = function () {
         //Extract videoId if it is an HTTP address and return Id
@@ -27,7 +28,7 @@ var YoutubePlayer = (function () {
         //"https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
         //Sanitize the entry
         this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.videoId + "?enablejsapi=1");
-        this.styleSafe = this.sanitizer.bypassSecurityTrustStyle(this.style);
+        //this.styleSafe = this.sanitizer.bypassSecurityTrustStyle(this.style)
     };
     YoutubePlayer.prototype.getIdFromURL = function (url) {
         // adapted from http://brandly.github.io/angular-youtube-embed/ and http://stackoverflow.com/a/5831191/1614967  
@@ -79,14 +80,10 @@ var YoutubePlayer = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], YoutubePlayer.prototype, "playerId", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], YoutubePlayer.prototype, "style", void 0);
     YoutubePlayer = __decorate([
         core_1.Component({
             selector: 'youtube-player',
-            template: "\n      <iframe [id]=\"playerId\"\n         [width]=\"width\"\n         [height]=\"height\"\n         [src]=\"src\"\n         frameborder=\"0\"\n         [style]=\"styleSafe\"\n         allowfullscreen\n         >\n      </iframe>\n      "
+            template: "\n      <iframe [id]=\"playerId\"\n         [width]=\"width\"\n         [height]=\"height\"\n         [src]=\"src\"\n         frameborder=\"0\"\n         allowfullscreen\n         >\n      </iframe>\n      "
         }), 
         __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
     ], YoutubePlayer);
