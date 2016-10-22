@@ -4,7 +4,7 @@
   "description": "lightweight wrapper for youtube player",
   "repository": {
     "type": "git",
-    "url": "git+://github.com/sylc/ng2-youtube-player-mini.git"
+    "url": "https://github.com/sylc/ng2-youtube-player-mini.git"
   },
   "scripts": {
     "tsc": "tsc"

@@ -10,9 +10,14 @@ npm install ng2-youtube-player-mini --save
 
 ## Use Example:
 
-In systemJS:
+In systemjs.config.js:
 ```typescript
-map: {
+System.config({
+    paths: {
+      // paths serve as alias
+      'npm:': 'node_modules/'
+    },
+    map: {
          //add line
          'ng2-youtube-player-mini': 'npm:ng2-youtube-player-mini'
       },
