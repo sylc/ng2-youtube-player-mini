@@ -63,7 +63,7 @@ videoId is considered Safe. Ensure these values are not provided by an unknown s
 
 
 #Releases notes
-2.1.0 : added playlist. change import statement.
+2.1.1 : added playlist. change import statement.
 
 ## Author
 
