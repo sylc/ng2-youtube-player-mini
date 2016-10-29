@@ -29,7 +29,7 @@ System.config({
 
 In app.module
 ```typescript
-import { YoutubePlayerMiniModule }  from 'ng2-youtube-player-mini/ng2-youtube-player-mini'
+import { YoutubePlayerMiniModule }  from 'ng2-youtube-player-mini'
 ...
 imports:[YoutubePlayerMiniModule]
 ```
@@ -48,11 +48,22 @@ class App {
 
 }
 ```
+for Playlist, you can specify a playlistId:
+```
+<youtube-player [playerId]='"player"' [width]="640" [height]="480" [videoId]='' [playlistId]='"PLy_wKxVmWb4ZrduWMNXPWmBBImCAMqHV4"' > </youtube-player>
+```
+the videoId is then the id of the video where you want the playlist to start.
+
+
 ## Notes
 You can also pass an http type link to videoId. 
 
 ## Security Notes
-videoId is considered Safe. Ensure these values are not provided by unknown source. 
+videoId is considered Safe. Ensure these values are not provided by an unknown source. 
+
+
+#Releases notes
+2.1.0 : added playlist. change import statement.
 
 ## Author
 

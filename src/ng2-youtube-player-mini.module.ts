@@ -1,7 +1,7 @@
 import { NgModule }           from '@angular/core';
 //import { BrowserModule }      from '@angular/platform-browser';
 
-import { YoutubePlayer } from './src/youtube-player.component';
+import { YoutubePlayer } from './youtube-player.component';
 
 
 @NgModule({

@@ -20,18 +20,19 @@ export class YoutubePlayer implements OnInit {
   public src: SafeResourceUrl;
   //private styleSafe: SafeUrl;
 
-  @Input() width: number;
-  @Input() height: number;
+  @Input() width: number = 640;
+  @Input() height: number = 390;
   @Input() videoId: string;
-  @Input() playerId: string;
+  @Input() playerId: string = "player";
+  @Input() playlistId: string = '';
   //@Input() style: string;
 
 
   constructor(private sanitizer: DomSanitizer) {
-    this.width = 640;
-    this.height = 390;
-    this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
-    this.playerId = "player";
+    // this.width = 640;
+    // this.height = 390;
+    // this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
+    // this.playerId = "player";
     //this.style = ""
 
   }
@@ -41,17 +42,23 @@ export class YoutubePlayer implements OnInit {
     //Extract videoId if it is an HTTP address and return Id
     if (this.videoId) {
       this.videoId = this.getIdFromURL(this.videoId)
+    } else if (this.playlistId !== '') {
+      this.videoId = ""
+    } else {
+      this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
     }
 
-    //"https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
-    //Sanitize the entry
-    this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.videoId + "?enablejsapi=1")
-    //this.styleSafe = this.sanitizer.bypassSecurityTrustStyle(this.style)
+    if (this.playlistId !== ''){
+      this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/"+ this.videoId + "?lisType=playlist&list=" + this.playlistId)
+    } else {
+      //"https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
+      //Sanitize the entry
+      this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.videoId + "?enablejsapi=1")
+    }
+        //this.styleSafe = this.sanitizer.bypassSecurityTrustStyle(this.style)
   }
 
-
-
-  getIdFromURL(url: string) {
+  private getIdFromURL(url: string) {
     // adapted from http://brandly.github.io/angular-youtube-embed/ and http://stackoverflow.com/a/5831191/1614967  
     var youtubeRegexp = /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*?[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*/ig;
     // /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*?[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*/ig

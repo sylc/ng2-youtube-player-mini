@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 //import { BrowserModule }      from '@angular/platform-browser';
-var youtube_player_component_1 = require('./src/youtube-player.component');
+var youtube_player_component_1 = require('./youtube-player.component');
 var YoutubePlayerMiniModule = (function () {
     function YoutubePlayerMiniModule() {
     }
@@ -24,4 +24,4 @@ var YoutubePlayerMiniModule = (function () {
     return YoutubePlayerMiniModule;
 }());
 exports.YoutubePlayerMiniModule = YoutubePlayerMiniModule;
-//# sourceMappingURL=ng2-youtube-player-mini.js.map
+//# sourceMappingURL=ng2-youtube-player-mini.module.js.map

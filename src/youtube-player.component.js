@@ -13,21 +13,37 @@ var platform_browser_1 = require('@angular/platform-browser');
 var YoutubePlayer = (function () {
     //@Input() style: string;
     function YoutubePlayer(sanitizer) {
+        // this.width = 640;
+        // this.height = 390;
+        // this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
+        // this.playerId = "player";
+        //this.style = ""
         this.sanitizer = sanitizer;
+        //private styleSafe: SafeUrl;
         this.width = 640;
         this.height = 390;
-        this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
         this.playerId = "player";
-        //this.style = ""
+        this.playlistId = '';
     }
     YoutubePlayer.prototype.ngOnInit = function () {
         //Extract videoId if it is an HTTP address and return Id
         if (this.videoId) {
             this.videoId = this.getIdFromURL(this.videoId);
         }
-        //"https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
-        //Sanitize the entry
-        this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.videoId + "?enablejsapi=1");
+        else if (this.playlistId !== '') {
+            this.videoId = "";
+        }
+        else {
+            this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
+        }
+        if (this.playlistId !== '') {
+            this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.videoId + "?lisType=playlist&list=" + this.playlistId);
+        }
+        else {
+            //"https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
+            //Sanitize the entry
+            this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.videoId + "?enablejsapi=1");
+        }
         //this.styleSafe = this.sanitizer.bypassSecurityTrustStyle(this.style)
     };
     YoutubePlayer.prototype.getIdFromURL = function (url) {
@@ -80,6 +96,10 @@ var YoutubePlayer = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], YoutubePlayer.prototype, "playerId", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], YoutubePlayer.prototype, "playlistId", void 0);
     YoutubePlayer = __decorate([
         core_1.Component({
             selector: 'youtube-player',

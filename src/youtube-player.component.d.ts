@@ -8,7 +8,8 @@ export declare class YoutubePlayer implements OnInit {
     height: number;
     videoId: string;
     playerId: string;
+    playlistId: string;
     constructor(sanitizer: DomSanitizer);
     ngOnInit(): void;
-    getIdFromURL(url: string): string;
+    private getIdFromURL(url);
 }
