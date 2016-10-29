@@ -24,4 +24,3 @@ var YoutubePlayerMiniModule = (function () {
     return YoutubePlayerMiniModule;
 }());
 exports.YoutubePlayerMiniModule = YoutubePlayerMiniModule;
-//# sourceMappingURL=ng2-youtube-player-mini.module.js.map

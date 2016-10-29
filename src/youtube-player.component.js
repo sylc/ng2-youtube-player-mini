@@ -110,4 +110,3 @@ var YoutubePlayer = (function () {
     return YoutubePlayer;
 }());
 exports.YoutubePlayer = YoutubePlayer;
-//# sourceMappingURL=youtube-player.component.js.map
