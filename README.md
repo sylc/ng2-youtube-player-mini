@@ -47,7 +47,7 @@ import {Component} from '@angular/core';
 class App {
 
 }
-```
+```typescript
 for Playlist, you can specify a playlistId:
 ```
 <youtube-player [playerId]='"player"' [width]="640" [height]="480" [videoId]='' [playlistId]='"PLy_wKxVmWb4ZrduWMNXPWmBBImCAMqHV4"' > </youtube-player>
