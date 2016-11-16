@@ -49,7 +49,7 @@ export class YoutubePlayer implements OnInit {
     }
 
     if (this.playlistId !== ''){
-      this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/"+ this.videoId + "?lisType=playlist&list=" + this.playlistId)
+      this.src = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/"+ this.videoId + "?listType=playlist&list=" + this.playlistId)
     } else {
       //"https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
       //Sanitize the entry

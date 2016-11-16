@@ -2,4 +2,4 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(require('./src/ng2-youtube-player-mini.module'));
+__export(require('./module/youtube-player-mini.module'));

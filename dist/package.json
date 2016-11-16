@@ -8,9 +8,10 @@
   },
   "scripts": {
     "tsc": "tsc -w",
-    "aot": "rimraf dist/**/* && ngc -p tsconfig-aot.json && npm run cp:json && npm run clean:waste",
-    "clean:waste": "rimraf dist/waste",
-    "cp:json":"cpx package.json dist", 
+    "aot": "rimraf dist/**/* && ngc -p tsconfig-aot.json && npm run cp:json && npm run cp:npm ",
+    "clean": "rimraf dist/waste",
+    "cp:json":"cpx package.json dist",
+    "cp:npm":"cpx .npmignore dist",
     "pub": "npm run cp:json && npm publish"
   },
   "keywords": [

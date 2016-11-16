@@ -1,5 +1,5 @@
 # ng2-youtube-player-mini
-lightweight wrapper for youtube player
+Angular 2 lightweight wrapper for Youtube player
 
 
 ## Installation:
