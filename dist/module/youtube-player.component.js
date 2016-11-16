@@ -1,9 +1,9 @@
 "use strict";
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var YoutubePlayer = (function () {
+var YoutubePlayerComponent = (function () {
     //@Input() style: string;
-    function YoutubePlayer(sanitizer) {
+    function YoutubePlayerComponent(sanitizer) {
         // this.width = 640;
         // this.height = 390;
         // this.videoId = "vntAEVjPBzQ"; //Ghostbusters :)
@@ -16,7 +16,7 @@ var YoutubePlayer = (function () {
         this.playerId = "player";
         this.playlistId = '';
     }
-    YoutubePlayer.prototype.ngOnInit = function () {
+    YoutubePlayerComponent.prototype.ngOnInit = function () {
         //Extract videoId if it is an HTTP address and return Id
         if (this.videoId) {
             this.videoId = this.getIdFromURL(this.videoId);
@@ -37,7 +37,7 @@ var YoutubePlayer = (function () {
         }
         //this.styleSafe = this.sanitizer.bypassSecurityTrustStyle(this.style)
     };
-    YoutubePlayer.prototype.getIdFromURL = function (url) {
+    YoutubePlayerComponent.prototype.getIdFromURL = function (url) {
         // adapted from http://brandly.github.io/angular-youtube-embed/ and http://stackoverflow.com/a/5831191/1614967  
         var youtubeRegexp = /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*?[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*/ig;
         // /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube(?:-nocookie)?\.com\S*?[^\w\s-])([\w-]{11})(?=[^\w-]|$)(?![?=&+%\w.-]*(?:['"][^<>]*>|<\/a>))[?=&+%\w.-]*/ig
@@ -71,23 +71,23 @@ var YoutubePlayer = (function () {
         return id;
     };
     ;
-    YoutubePlayer.decorators = [
+    YoutubePlayerComponent.decorators = [
         { type: core_1.Component, args: [{
                     selector: 'youtube-player',
                     template: "\n      <iframe [id]=\"playerId\"\n         [width]=\"width\"\n         [height]=\"height\"\n         [src]=\"src\"\n         frameborder=\"0\"\n         allowfullscreen\n         >\n      </iframe>\n      "
                 },] },
     ];
     /** @nocollapse */
-    YoutubePlayer.ctorParameters = [
+    YoutubePlayerComponent.ctorParameters = [
         { type: platform_browser_1.DomSanitizer, },
     ];
-    YoutubePlayer.propDecorators = {
+    YoutubePlayerComponent.propDecorators = {
         'width': [{ type: core_1.Input },],
         'height': [{ type: core_1.Input },],
         'videoId': [{ type: core_1.Input },],
         'playerId': [{ type: core_1.Input },],
         'playlistId': [{ type: core_1.Input },],
     };
-    return YoutubePlayer;
+    return YoutubePlayerComponent;
 }());
-exports.YoutubePlayer = YoutubePlayer;
+exports.YoutubePlayerComponent = YoutubePlayerComponent;

@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-export declare class YoutubePlayer implements OnInit {
+export declare class YoutubePlayerComponent implements OnInit {
     private sanitizer;
     player: any;
     src: SafeResourceUrl;

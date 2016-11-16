@@ -1,1 +1,2 @@
-export * from './module/youtube-player-mini.module';
+export declare class YoutubePlayerMiniModule {
+}

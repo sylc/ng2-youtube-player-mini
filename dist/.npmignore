@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log
+*.map
+*.ts
+!*.d.ts
+typings
+*.tgz

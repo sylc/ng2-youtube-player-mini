@@ -14,7 +14,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
       </iframe>
       `
 })
-export class YoutubePlayer implements OnInit {
+export class YoutubePlayerComponent implements OnInit {
 
   public player: any;
   public src: SafeResourceUrl;
