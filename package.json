@@ -1,18 +1,18 @@
 {
   "name": "ng2-youtube-player-mini",
-  "version": "2.2.3",
-  "description": "lightweight wrapper for youtube player",
+  "version": "2.2.4",
+  "description": "Angular 2 lightweight wrapper for Youtube player - AoT ready.",
   "repository": {
     "type": "git",
     "url": "https://github.com/sylc/ng2-youtube-player-mini.git"
   },
   "scripts": {
     "tsc": "tsc -w",
-    "aot": "rimraf dist/**/* && ngc -p tsconfig-aot.json && npm run cp:json && npm run clean:waste && npm run cp:npm",
+    "aot": "rimraf dist/**/* && ngc -p tsconfig-aot.json && npm run cp:json && npm run clean:waste && npm run cp:npm && npm run cp:readme",
     "clean:waste": "rimraf dist/waste",
     "cp:json":"cpx package.json dist",
-    "cp:npm":"cpx .npmignore dist",  
-    "pub": "npm run cp:json && npm publish"
+    "cp:npm":"cpx .npmignore dist",
+    "cp:readme":"cpx readme.md dist"
   },
   "keywords": [
     "ng2",
